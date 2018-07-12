@@ -16,10 +16,12 @@
   <properties>
     <revision>0.1-SNAPSHOT</revision>
     <simter-mail.version>${revision}</simter-mail.version>
+    <simter-kv.version>0.2.0</simter-kv.version>
   </properties>
   <modules>
     <module>simter-mail-dependencies</module>
     <module>simter-mail-parent</module>
+    <module>simter-mail-receiver</module>
     <module>simter-mail-data</module>
     <module>simter-mail-data-jpa</module>
     <module>simter-mail-data-reactive-mongo</module>

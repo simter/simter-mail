@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>tech.simter</groupId>
+    <artifactId>simter-mail-parent</artifactId>
+    <version>${revision}</version>
+    <relativePath>../simter-mail-parent</relativePath>
+  </parent>
+  <artifactId>simter-mail-receiver</artifactId>
+  <packaging>jar</packaging>
+  <description>Mail Receiver</description>
+  <developers>
+    <developer>
+      <name>RJ.Hwang</name>
+      <email>rongjihuang@gmail.com</email>
+    </developer>
+  </developers>
+  <dependencies>
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>javax.mail</artifactId>
+      <version>1.6.1</version>
+    </dependency>
+    <!-- 2012-01-17
+    <dependency>
+      <groupId>org.subethamail</groupId>
+      <artifactId>subethasmtp</artifactId>
+      <version>3.1.7</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.davidmoten</groupId>
+      <artifactId>subethasmtp</artifactId>
+      <version>4.0-RC8</version>
+    </dependency> -->
+    <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+    </dependency>
+    <!--
+    <dependency>
+      <groupId>org.springframework.integration</groupId>
+      <artifactId>spring-integration-mail</artifactId>
+    </dependency>-->
+  </dependencies>
+  <profiles>
+    <profile>
+      <id>test</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>io.projectreactor</groupId>
+          <artifactId>reactor-test</artifactId>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+</project>

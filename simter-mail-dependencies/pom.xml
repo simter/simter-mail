@@ -20,6 +20,11 @@
     <dependencies>
       <dependency>
         <groupId>tech.simter</groupId>
+        <artifactId>simter-mail-receiver</artifactId>
+        <version>${simter-mail.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>tech.simter</groupId>
         <artifactId>simter-mail-data</artifactId>
         <version>${simter-mail.version}</version>
       </dependency>

@@ -26,6 +26,14 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <!-- simter-kv -->
+      <dependency>
+        <groupId>tech.simter</groupId>
+        <artifactId>simter-kv-dependencies</artifactId>
+        <version>${simter-kv.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       <!-- simter base modules -->
       <dependency>
         <groupId>tech.simter</groupId>
