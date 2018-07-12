@@ -1,9 +1,13 @@
 package tech.simter.mail.javamail
 
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import org.slf4j.LoggerFactory
 import java.util.*
-import javax.mail.*
+import javax.mail.Message
+import javax.mail.MessagingException
+import javax.mail.Session
+import javax.mail.Transport
 import javax.mail.internet.InternetAddress
 import javax.mail.internet.MimeMessage
 
@@ -11,6 +15,7 @@ import javax.mail.internet.MimeMessage
 /**
  * <https://www.dingdangss.com/2017/03/02/使用JavaMail收发邮件>
  */
+@Disabled
 class SendMailTest {
   private val logger = LoggerFactory.getLogger(SendMailTest::class.java)
   private val SSL_FACTORY = "javax.net.ssl.SSLSocketFactory"
@@ -38,16 +43,16 @@ class SendMailTest {
       logger.info("Subject: " + sendMailVO.topic)
       logger.info("Body: " + sendMailVO.content)
       // 构建授权信息，用于进行SMTP进行身份验证
-      val authenticator = object : Authenticator() {
-        protected// 用户名、密码
-        val passwordAuthentication: PasswordAuthentication
-          get() {
-            val userName = props.getProperty("mail.user")
-            val password = props.getProperty("mail.password")
-            return PasswordAuthentication(userName, password)
-          }
-      }
-      val mailSession = Session.getInstance(props, authenticator)// 使用环境属性和授权信息，创建邮件会话
+//      val authenticator = object : Authenticator() {
+//        protected// 用户名、密码
+//        val passwordAuthentication: PasswordAuthentication
+//          get() {
+//            val userName = props.getProperty("mail.user")
+//            val password = props.getProperty("mail.password")
+//            return PasswordAuthentication(userName, password)
+//          }
+//      }
+      val mailSession = Session.getInstance(props, null)// 使用环境属性和授权信息，创建邮件会话
       val message = MimeMessage(mailSession)// 创建邮件消息
       // 设置发件人
       val form = InternetAddress(props.getProperty("mail.user"))
